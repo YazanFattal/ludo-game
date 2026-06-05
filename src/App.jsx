@@ -237,20 +237,10 @@ function SetupScreen({ onStart }) {
 }
 
 function Dice({ value, rolling }) {
-   return (
-    <div className="flex h-[120px] w-[120px] shrink-0 items-center justify-center">
-      <motion.div
-        animate={
-          rolling
-            ? { rotate: [0, 20, -20, 360], scale: [1, 1.08, 0.96, 1] }
-            : { rotate: 0, scale: 1 }
-        }
-        transition={{ duration: 0.5 }}
-        className="flex h-24 w-24 items-center justify-center rounded-3xl bg-white text-5xl font-black shadow-xl ring-1 ring-slate-200"
-      >
-        {rolling ? "🎲" : value || "?"}
-      </motion.div>
-    </div>
+  return (
+    <motion.div animate={rolling ? { rotate: [0, 20, -20, 360], scale: [1, 1.15, 0.95, 1] } : { rotate: 0, scale: 1 }} transition={{ duration: 0.5 }} className="flex h-24 w-24 items-center justify-center rounded-3xl bg-white text-5xl font-black shadow-xl ring-1 ring-slate-200">
+      {rolling ? "🎲" : value || "?"}
+    </motion.div>
   );
 }
 
